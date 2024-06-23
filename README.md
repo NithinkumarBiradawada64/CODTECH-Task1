@@ -1,11 +1,17 @@
 **NAME** : Nithinkumar Biradawada
+
 **Company** : CODTECH IT SOLUTIONS
+
 **ID** : CT8SQL1167
+
 **Domain** : SQL
+
 **Duration**: June 20th - August 20th (2024)
+
 **Mentor**: Neela Santhosh Kumar
 
 **OVER VIEW of The Project**
+
 **Project**: LIBRARY MANAGEMENT SYSTEM
 
 **Objective**
