@@ -20,5 +20,7 @@ Contains member details (e.g., name, address).
 Transactions Table (transaction):
 Records borrowing and returning actions.
 Includes transaction ID, book ID, member ID, transaction date, and status.
+
+
 **Future Enhancements**:
 Consider additional features like notifications, fine management, and analytics.
