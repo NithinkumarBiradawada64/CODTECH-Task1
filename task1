@@ -1,0 +1,74 @@
+CREATE DATABASE  IF NOT EXISTS LIBRARY_Mangement;
+USE LIBRARY_Mangement;
+CREATE TABLE Books (
+Book_id INT PRIMARY KEY AUTOINCREMENT ,
+ISBN TEXT ,
+title VARCHAR(50),
+author VARCHAR(50),
+publisher VARCHAR(50),
+available BOOLEAN 
+);
+CREATE TABLE member (
+member_id INT  PRIMARY KEY AUTOINCREMENT,
+name VARCHAR (50),
+address VARCHAR(225)
+);
+CREATE TABLE Transaction(
+transaction_id INT PRIMARY KEY AUTOINCREMENT ,
+Books_id INT ,
+FOREIGN KEY (Books_id )REFERENCES Books(Book_id),
+members_id INT ,
+FOREIGN KEY (members_id)REFERENCES member(member_id),
+transaction_date DATE,
+transaction_type TEXT
+);
+INSERT INTO Books 
+(ISBN,title,author,publisher,available )
+VALUES 
+('1001','Becoming','Michelle Obama','Crown Publishing',TRUE),
+('1002','A Promised Land','Barack Obama','Crown Publishing',TRUE),
+('1003','Her Body and Other Parties','Carmen Maria Machado','Graywolf Press',TRUE),
+('1004','The Wild Fox for Yemen','Threa Almontaser','Graywolf Press',TRUE),
+('1005','Highfire','Thera almontaser','Graywolf Press',TRUE),
+('1006','In The Global Warming We Trust:Too Big to Fail','Anthony Sadar','Stairway Press',TRUE);
+INSERT INTO member 
+(name ,address )
+VALUES 
+('John Doe','USA'),
+('Jane Smith','ITALY' ),
+('Nithin','Naidupet'),
+('JOE','Chinna');
+INSERT INTO Transaction
+(Books_id,members_id,transaction_date,transaction_type)
+VALUES 
+(1,1,'2024-06-23','Borrowed'),
+(2,3,'2024-06-23','Retruned'),
+(5,2,'2024-06-23','Borrowed'),
+(3,4,'2024-06-23','Retruned');
+UPDATE Books
+SET available =FALSE
+WHERE book_id =1;
+UPDATE Books
+SET available = FALSE
+WHERE book_id = 5;
+
+DELETE FROM Books
+WHERE book_id=6;
+
+DELETE FROM member
+WHERE member_id=4;
+
+DELETE FROM Transaction
+WHERE transaction_id=4;
+
+SELECT * FROM Books;
+
+SELECT *FROM member;
+
+SELECT *FROM Transaction ;
+
+SELECT * FROM Books
+WHERE available=TRUE;
+
+SELECT * FROM Transaction 
+WHERE transaction_date='2024-06-23';
